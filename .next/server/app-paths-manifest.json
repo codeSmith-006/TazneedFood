@@ -1,7 +1,9 @@
 {
   "/page": "app/page.js",
-  "/collections/[category]/[slug]/page": "app/collections/[category]/[slug]/page.js",
   "/collections/[category]/page": "app/collections/[category]/page.js",
+  "/collections/[category]/[slug]/page": "app/collections/[category]/[slug]/page.js",
+  "/admin/(protected)/orders/page": "app/admin/(protected)/orders/page.js",
   "/admin/(protected)/products/page": "app/admin/(protected)/products/page.js",
-  "/admin/(protected)/orders/page": "app/admin/(protected)/orders/page.js"
+  "/admin/(protected)/page": "app/admin/(protected)/page.js",
+  "/admin/(protected)/dashboard/page": "app/admin/(protected)/dashboard/page.js"
 }
