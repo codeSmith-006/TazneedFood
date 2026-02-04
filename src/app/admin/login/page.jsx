@@ -1,5 +1,8 @@
 "use client";
 
+// 🔴 REQUIRED: prevent static prerendering
+export const dynamic = "force-dynamic";
+
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -29,6 +32,7 @@ export default function AdminLoginPage() {
     setSubmitting(false);
 
     if (res?.error) {
+      // generic error to avoid info leakage
       setError("Invalid credentials.");
       return;
     }
@@ -39,14 +43,18 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md bg-card shadow-soft rounded-xl p-8">
-        <h1 className="font-display text-2xl font-bold text-foreground mb-2">Admin Login</h1>
+        <h1 className="font-display text-2xl font-bold text-foreground mb-2">
+          Admin Login
+        </h1>
         <p className="text-sm text-muted-foreground mb-6">
           Sign in with your admin email and password.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">Email</label>
+            <label className="block text-sm font-medium text-foreground mb-1">
+              Email
+            </label>
             <input
               type="email"
               className="w-full px-4 py-2 rounded-lg border border-border bg-background"
@@ -56,8 +64,11 @@ export default function AdminLoginPage() {
               autoComplete="email"
             />
           </div>
+
           <div>
-            <label className="block text-sm font-medium text-foreground mb-1">Password</label>
+            <label className="block text-sm font-medium text-foreground mb-1">
+              Password
+            </label>
             <input
               type="password"
               className="w-full px-4 py-2 rounded-lg border border-border bg-background"

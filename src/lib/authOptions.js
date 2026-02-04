@@ -27,7 +27,6 @@ export const authOptions = {
           return null;
         }
 
-        console.log(credentials.email, credentials.password);
 
         await connectDB();
 
@@ -35,7 +34,6 @@ export const authOptions = {
           email: credentials.email.toLowerCase(),
         });
 
-        console.log(admin)
 
         // 🔐 Always verify password (timing-safe)
         const isValid = await verifyPassword(
