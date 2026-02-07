@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ShoppingCartOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { useCartContext } from "@/contexts/CartContext";
+import Image from "next/image";
 
 const ProductCard = ({ product, index = 0 }) => {
   const { addItem, openCart } = useCartContext();
@@ -65,10 +66,12 @@ const ProductCard = ({ product, index = 0 }) => {
         {/* Image Section */}
         <Link href={`/collections/${product.categorySlug}/${product.slug}`} className="block">
           <div className="relative aspect-square overflow-hidden bg-secondary">
-            <img
+            <Image
               src={product.images[0]}
               alt={product.name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
 
             {/* Badges */}
