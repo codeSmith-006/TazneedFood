@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 
-export function getBaseUrl() {
-  const headerStore = headers();
+export async function getBaseUrl() {
+  const headerStore = await headers();
   const host = headerStore.get("host");
 
   if (!host) {

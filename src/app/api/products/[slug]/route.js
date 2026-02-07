@@ -5,7 +5,8 @@ import Product from "@/models/Product";
 export async function GET(req, { params }) {
   try {
     await connectDB();
-    const slug = params?.slug ? String(params.slug) : "";
+    const { slug: rawSlug } = await params;
+    const slug = rawSlug ? String(rawSlug) : "";
 
     const product = await Product.findOne({ slug }).lean();
     if (!product) {

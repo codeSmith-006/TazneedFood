@@ -2,11 +2,12 @@ import ProductPage from "@/components/pages/ProductPage";
 import { getBaseUrl } from "@/lib/api";
 
 export async function generateMetadata({ params }) {
-  const slug = params?.slug ? String(params.slug) : "";
-  const baseUrl = getBaseUrl();
+  const { slug: rawSlug } = await params;
+  const slug = rawSlug ? String(rawSlug) : "";
+  const baseUrl = await getBaseUrl();
 
   const productRes = await fetch(`${baseUrl}/api/products/${slug}`, {
-    next: { tags: ["products"] },
+    next: { revalidate: 60, tags: ["products"] },
   });
 
   if (!productRes.ok) {
@@ -30,14 +31,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const slug = params?.slug ? String(params.slug) : "";
-  const categorySlug = params?.category ? String(params.category) : "";
-  const baseUrl = getBaseUrl();
+  const { slug: rawSlug, category: rawCategory } = await params;
+  const slug = rawSlug ? String(rawSlug) : "";
+  const categorySlug = rawCategory ? String(rawCategory) : "";
+  const baseUrl = await getBaseUrl();
 
   const [productRes, categoryRes, relatedRes] = await Promise.all([
-    fetch(`${baseUrl}/api/products/${slug}`, { next: { tags: ["products"] } }),
-    fetch(`${baseUrl}/api/categories?slug=${categorySlug}`, { next: { tags: ["categories"] } }),
-    fetch(`${baseUrl}/api/products?category=${categorySlug}&limit=8`, { next: { tags: ["products"] } }),
+    fetch(`${baseUrl}/api/products/${slug}`, { next: { revalidate: 60, tags: ["products"] } }),
+    fetch(`${baseUrl}/api/categories?slug=${categorySlug}`, { next: { revalidate: 60, tags: ["categories"] } }),
+    fetch(`${baseUrl}/api/products?category=${categorySlug}&limit=8`, { next: { revalidate: 60, tags: ["products"] } }),
   ]);
 
   const productData = productRes.ok ? await productRes.json() : null;

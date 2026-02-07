@@ -149,8 +149,8 @@ const ProductPage = ({ product, currentCategory, relatedProducts = [] }) => {
                       key={index}
                       onClick={() => setSelectedImage(index)}
                       className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${selectedImage === index
-                          ? "border-primary shadow-md scale-105"
-                          : "border-transparent hover:border-border opacity-70 hover:opacity-100"
+                        ? "border-primary shadow-md scale-105"
+                        : "border-transparent hover:border-border opacity-70 hover:opacity-100"
                         }`}
                     >
                       <img

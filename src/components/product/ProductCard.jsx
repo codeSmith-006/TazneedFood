@@ -57,9 +57,7 @@ const ProductCard = ({ product, index = 0 }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+      
       className="h-full"
     >
       <div className="product-card group h-full flex flex-col bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -71,7 +69,7 @@ const ProductCard = ({ product, index = 0 }) => {
               alt={product.name}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-cover transition-transform duration-500 "
             />
 
             {/* Badges */}
