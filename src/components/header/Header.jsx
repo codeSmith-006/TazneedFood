@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { SearchOutlined, ShoppingCartOutlined, UserOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useCartContext } from "@/contexts/CartContext";
-import { categories } from "@/lib/data";
 
 const Header = () => {
   const pathname = usePathname();
@@ -14,6 +13,23 @@ const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchCategories = async () => {
+      const response = await fetch("/api/categories");
+      if (!response.ok || !isMounted) return;
+      const data = await response.json();
+      setCategories(data.categories || []);
+    };
+
+    fetchCategories();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const navCategories = categories.slice(0, 6);
 
   return (
@@ -40,7 +56,7 @@ const Header = () => {
                   <Link
                     key={category.id}
                     href={`/collections/${category.slug}`}
-                    className={`category-nav-item ${isActive ? "active" : ""}`}
+                    className={`category-nav-item font-semibold ${isActive ? "active" : ""}`}
                   >
                     {category.name}
                   </Link>
@@ -134,9 +150,8 @@ const Header = () => {
                         key={category.id}
                         href={`/collections/${category.slug}`}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`px-4 py-3 rounded-lg transition-colors ${
-                          isActive ? "bg-primary text-primary-foreground" : "hover:bg-secondary"
-                        }`}
+                        className={`px-4 py-3 rounded-lg transition-colors ${isActive ? "bg-primary text-primary-foreground" : "hover:bg-secondary"
+                          }`}
                       >
                         {category.name}
                       </Link>

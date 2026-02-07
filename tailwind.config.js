@@ -12,7 +12,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
+        display: ["Poppins", "serif"],
         body: ["Inter", "sans-serif"],
       },
       colors: {

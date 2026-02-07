@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   FacebookOutlined,
@@ -10,9 +10,25 @@ import {
   PhoneOutlined,
   EnvironmentOutlined,
 } from "@ant-design/icons";
-import { categories } from "@/lib/data";
 
 const Footer = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchCategories = async () => {
+      const response = await fetch("/api/categories");
+      if (!response.ok || !isMounted) return;
+      const data = await response.json();
+      setCategories(data.categories || []);
+    };
+
+    fetchCategories();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
@@ -22,8 +38,8 @@ const Footer = () => {
               Organic<span className="text-gold-light">Store</span>
             </h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Premium organic products sourced from the finest natural origins. Quality you can
-              trust, delivered to your doorstep.
+              Premium organic products sourced from the finest natural origins. Quality you can trust, delivered to your
+              doorstep.
             </p>
             <div className="flex gap-3 mt-6">
               <a
@@ -106,9 +122,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <EnvironmentOutlined className="mt-0.5 text-gold-light" />
-                <span className="text-primary-foreground/80 text-sm">
-                  123 Organic Lane, Dhaka, Bangladesh
-                </span>
+                <span className="text-primary-foreground/80 text-sm">123 Organic Lane, Dhaka, Bangladesh</span>
               </li>
             </ul>
           </div>

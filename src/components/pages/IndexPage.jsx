@@ -7,12 +7,9 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import ProductGrid from "@/components/product/ProductGrid";
-import { categories, getAllProducts, getBestSellers } from "@/lib/data";
 
-const IndexPage = () => {
-  const allProducts = getAllProducts();
-  const bestSellers = getBestSellers();
-
+const IndexPage = ({ categories, allProducts, bestSellers }) => {
+  console.log("all products: ", allProducts)
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -20,11 +17,7 @@ const IndexPage = () => {
       <main className="flex-1">
         <section className="relative h-[70vh] min-h-[500px] max-h-[700px] overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src="/assets/hero-banner.jpg"
-              alt="Premium organic products"
-              className="w-full h-full object-cover"
-            />
+            <img src="/assets/hero-banner.jpg" alt="Premium organic products" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/80 via-forest-dark/50 to-transparent" />
           </div>
 
@@ -44,8 +37,8 @@ const IndexPage = () => {
                 <span className="text-gold-light">Delivered Fresh</span>
               </h1>
               <p className="text-primary-foreground/90 text-lg mb-8 leading-relaxed">
-                Discover our handpicked collection of premium organic products. From raw honey to
-                pure ghee, we bring nature&apos;s finest to your table.
+                Discover our handpicked collection of premium organic products. From raw honey to pure ghee, we bring
+                nature&apos;s finest to your table.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -74,15 +67,13 @@ const IndexPage = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Shop by Category
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Explore our curated collections of premium organic products
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Shop by Category</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto hind">
+                আমাদের বাছাই করা প্রিমিয়াম অর্গানিক পণ্যের সংগ্রহ দেখুন
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 ">
               {categories.map((category, index) => (
                 <motion.div
                   key={category.id}
@@ -96,7 +87,7 @@ const IndexPage = () => {
                       <img
                         src={category.image}
                         alt={category.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full p-16 h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
                     <h3 className="font-display text-center font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -109,7 +100,8 @@ const IndexPage = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-secondary/50">
+        {/* comment out best seller */}
+        {/* <section className="py-16 bg-secondary/50">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -118,9 +110,7 @@ const IndexPage = () => {
               className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10"
             >
               <div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  Best Sellers
-                </h2>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">Best Sellers</h2>
                 <p className="text-muted-foreground">Our most loved products by customers</p>
               </div>
               <Link
@@ -134,7 +124,7 @@ const IndexPage = () => {
 
             <ProductGrid products={bestSellers} columns={4} />
           </div>
-        </section>
+        </section> */}
 
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
@@ -144,12 +134,7 @@ const IndexPage = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                All Products
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Browse our complete collection of premium organic products
-              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">All Products</h2>
             </motion.div>
 
             <ProductGrid products={allProducts} columns={4} />
