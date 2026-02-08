@@ -63,7 +63,7 @@ const ProductCard = ({ product, index = 0 }) => {
       <div className="product-card group h-full flex flex-col bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         {/* Image Section */}
         <Link href={`/collections/${product.categorySlug}/${product.slug}`} className="block">
-          <div className="relative aspect-square overflow-hidden bg-secondary">
+          <div className="relative aspect-[4/5] sm:aspect-square overflow-hidden bg-secondary">
             <Image
               src={product.images[0]}
               alt={product.name}
@@ -98,18 +98,18 @@ const ProductCard = ({ product, index = 0 }) => {
         </Link>
 
         {/* Content Section */}
-        <div className="flex-1 flex flex-col p-3 sm:p-4">
+        <div className="flex-1 flex flex-col p-2.5 sm:p-4">
           {/* Product Name */}
           <Link href={`/collections/${product.categorySlug}/${product.slug}`}>
-            <h3 className="font-display text-sm sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
+            <h3 className="font-display text-[13px] sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-1.5 sm:mb-2">
               {product.name}
             </h3>
           </Link>
 
           {/* Base Price */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-xs sm:text-sm text-muted-foreground">Base (1000g):</span>
-            <span className="font-semibold text-sm sm:text-base text-foreground">৳{product.price}</span>
+          <div className="flex items-center gap-2 mb-2 sm:mb-3">
+            <span className="text-[11px] sm:text-sm text-muted-foreground">Base (1000g):</span>
+            <span className="font-semibold text-[13px] sm:text-base text-foreground">৳{product.price}</span>
             {product.oldPrice && (
               <span className="text-xs text-muted-foreground line-through">৳{product.oldPrice}</span>
             )}

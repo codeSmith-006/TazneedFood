@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { HomeOutlined } from "@ant-design/icons";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -24,6 +24,7 @@ const CollectionPage = ({
   const [products, setProducts] = useState(initialProducts || []);
   const [total, setTotal] = useState(initialTotal || 0);
   const [isLoading, setIsLoading] = useState(false);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const buildQuery = useCallback(() => {
     const params = new URLSearchParams();
@@ -83,6 +84,61 @@ const CollectionPage = ({
     );
   }
 
+  const FiltersPanel = () => (
+    <div className="bg-card rounded-xl p-6 shadow-soft">
+      <div className="filter-section">
+        <h3 className="filter-title">Collections</h3>
+        <ul className="space-y-2">
+          {categories.map((category) => (
+            <li key={category.id}>
+              <Link
+                href={`/collections/${category.slug}`}
+                className={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${
+                  category.slug === categorySlug
+                    ? "bg-accent text-accent-foreground font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                }`}
+              >
+                {category.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="filter-section">
+        <h3 className="filter-title">Availability</h3>
+        <div className="space-y-3">
+          <label className="flex items-center gap-3 cursor-pointer">
+            <Checkbox checked={showInStock} onCheckedChange={(checked) => setShowInStock(Boolean(checked))} />
+            <span className="text-sm">In Stock</span>
+          </label>
+          <label className="flex items-center gap-3 cursor-pointer">
+            <Checkbox checked={showOutOfStock} onCheckedChange={(checked) => setShowOutOfStock(Boolean(checked))} />
+            <span className="text-sm">Out of Stock</span>
+          </label>
+        </div>
+      </div>
+
+      <div className="filter-section border-b-0">
+        <h3 className="filter-title">Price Range</h3>
+        <div className="pt-2">
+          <Slider
+            value={priceRange}
+            onValueChange={setPriceRange}
+            max={initialMaxPrice}
+            step={50}
+            className="mb-4"
+          />
+          <div className="flex justify-between text-sm text-muted-foreground">
+            <span>৳{priceRange[0]}</span>
+            <span>৳{priceRange[1]}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -118,63 +174,11 @@ const CollectionPage = ({
           </motion.p>
         </div>
 
-        <div className="container mx-auto px-4 pb-16">
+        <div className="container mx-auto px-4 pb-24">
           <div className="flex flex-col lg:flex-row gap-8">
-            <aside className="w-full lg:w-64 flex-shrink-0">
-              <div className="sticky top-24 bg-card rounded-xl p-6 shadow-soft">
-                <div className="filter-section">
-                  <h3 className="filter-title">Collections</h3>
-                  <ul className="space-y-2">
-                    {categories.map((category) => (
-                      <li key={category.id}>
-                        <Link
-                          href={`/collections/${category.slug}`}
-                          className={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${
-                            category.slug === categorySlug
-                              ? "bg-accent text-accent-foreground font-medium"
-                              : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                          }`}
-                        >
-                          {category.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="filter-section">
-                  <h3 className="filter-title">Availability</h3>
-                  <div className="space-y-3">
-                    <label className="flex items-center gap-3 cursor-pointer">
-                      <Checkbox checked={showInStock} onCheckedChange={(checked) => setShowInStock(Boolean(checked))} />
-                      <span className="text-sm">In Stock</span>
-                    </label>
-                    <label className="flex items-center gap-3 cursor-pointer">
-                      <Checkbox
-                        checked={showOutOfStock}
-                        onCheckedChange={(checked) => setShowOutOfStock(Boolean(checked))}
-                      />
-                      <span className="text-sm">Out of Stock</span>
-                    </label>
-                  </div>
-                </div>
-
-                <div className="filter-section border-b-0">
-                  <h3 className="filter-title">Price Range</h3>
-                  <div className="pt-2">
-                    <Slider
-                      value={priceRange}
-                      onValueChange={setPriceRange}
-                      max={initialMaxPrice}
-                      step={50}
-                      className="mb-4"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>৳{priceRange[0]}</span>
-                      <span>৳{priceRange[1]}</span>
-                    </div>
-                  </div>
-                </div>
+            <aside className="w-full lg:w-64 flex-shrink-0 hidden lg:block">
+              <div className="sticky top-24">
+                <FiltersPanel />
               </div>
             </aside>
 
@@ -190,6 +194,48 @@ const CollectionPage = ({
       </main>
 
       <Footer />
+
+      <button
+        type="button"
+        onClick={() => setMobileFiltersOpen(true)}
+        className="md:hidden fixed left-3 bottom-24 z-40 bg-card border border-border shadow-md px-3 py-2 rounded-full text-xs font-semibold"
+      >
+        Filters
+      </button>
+
+      <AnimatePresence>
+        {mobileFiltersOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/40 z-40 md:hidden"
+              onClick={() => setMobileFiltersOpen(false)}
+            />
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="fixed right-0 top-0 bottom-0 w-[85%] max-w-sm bg-card z-50 md:hidden shadow-xl"
+            >
+              <div className="flex items-center justify-between p-4 border-b border-border">
+                <span className="font-display text-lg font-semibold">Filters</span>
+                <button
+                  className="p-2 hover:bg-secondary rounded-lg"
+                  onClick={() => setMobileFiltersOpen(false)}
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="p-4">
+                <FiltersPanel />
+              </div>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
