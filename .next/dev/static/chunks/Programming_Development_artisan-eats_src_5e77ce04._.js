@@ -855,27 +855,42 @@ const CartDrawer = ()=>{
                     className: "fixed right-0 top-0 bottom-0 w-full max-w-md bg-card z-50 flex flex-col shadow-xl",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center justify-between p-4 border-b border-border",
+                            className: "flex mt-24 items-center gap-2 p-4 border-b border-border sticky top-0 bg-card z-10 md:static",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "font-display text-xl font-semibold",
-                                    children: "Your Cart"
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: closeCart,
+                                    "aria-label": "Close cart",
+                                    className: "md:hidden w-11 h-11 flex items-center justify-center rounded-lg hover:bg-secondary transition-colors",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f40$ant$2d$design$2f$icons$2f$es$2f$icons$2f$CloseOutlined$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloseOutlined$3e$__["CloseOutlined"], {}, void 0, false, {
+                                        fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                        lineNumber: 25,
+                                        columnNumber: 17
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
                                     lineNumber: 20,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "font-display text-xl font-semibold flex-1 md:flex-none",
+                                    children: "Your Cart"
+                                }, void 0, false, {
+                                    fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                    lineNumber: 27,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: closeCart,
-                                    className: "p-2 hover:bg-secondary rounded-lg transition-colors",
+                                    "aria-label": "Close cart",
+                                    className: "hidden md:inline-flex w-10 h-10 items-center justify-center rounded-lg hover:bg-secondary transition-colors",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f40$ant$2d$design$2f$icons$2f$es$2f$icons$2f$CloseOutlined$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloseOutlined$3e$__["CloseOutlined"], {}, void 0, false, {
                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                        lineNumber: 22,
+                                        lineNumber: 35,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                    lineNumber: 21,
+                                    lineNumber: 30,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
@@ -896,12 +911,12 @@ const CartDrawer = ()=>{
                                             children: "🛒"
                                         }, void 0, false, {
                                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                            lineNumber: 30,
+                                            lineNumber: 43,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                        lineNumber: 29,
+                                        lineNumber: 42,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -909,7 +924,7 @@ const CartDrawer = ()=>{
                                         children: "Your cart is empty"
                                     }, void 0, false, {
                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                        lineNumber: 32,
+                                        lineNumber: 45,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -917,13 +932,13 @@ const CartDrawer = ()=>{
                                         children: "Add some products to get started"
                                     }, void 0, false, {
                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                        lineNumber: 33,
+                                        lineNumber: 46,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                lineNumber: 28,
+                                lineNumber: 41,
                                 columnNumber: 38
                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-4",
@@ -951,12 +966,12 @@ const CartDrawer = ()=>{
                                                     className: "w-full h-full object-cover"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                    lineNumber: 40,
+                                                    lineNumber: 53,
                                                     columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                lineNumber: 39,
+                                                lineNumber: 52,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -967,7 +982,7 @@ const CartDrawer = ()=>{
                                                         children: item.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                        lineNumber: 45,
+                                                        lineNumber: 58,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -978,7 +993,7 @@ const CartDrawer = ()=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                        lineNumber: 46,
+                                                        lineNumber: 59,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -991,12 +1006,12 @@ const CartDrawer = ()=>{
                                                                     className: "text-xs"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                                    lineNumber: 51,
+                                                                    lineNumber: 64,
                                                                     columnNumber: 29
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                                lineNumber: 50,
+                                                                lineNumber: 63,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1004,7 +1019,7 @@ const CartDrawer = ()=>{
                                                                 children: item.quantity
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                                lineNumber: 53,
+                                                                lineNumber: 66,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1014,24 +1029,24 @@ const CartDrawer = ()=>{
                                                                     className: "text-xs"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                                    lineNumber: 57,
+                                                                    lineNumber: 70,
                                                                     columnNumber: 29
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                                lineNumber: 56,
+                                                                lineNumber: 69,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                        lineNumber: 49,
+                                                        lineNumber: 62,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                lineNumber: 44,
+                                                lineNumber: 57,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1039,28 +1054,28 @@ const CartDrawer = ()=>{
                                                 className: "text-muted-foreground hover:text-destructive transition-colors",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f40$ant$2d$design$2f$icons$2f$es$2f$icons$2f$DeleteOutlined$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DeleteOutlined$3e$__["DeleteOutlined"], {}, void 0, false, {
                                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                    lineNumber: 64,
+                                                    lineNumber: 77,
                                                     columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                                lineNumber: 63,
+                                                lineNumber: 76,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, item.id, true, {
                                         fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                        lineNumber: 37,
+                                        lineNumber: 50,
                                         columnNumber: 41
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                lineNumber: 36,
+                                lineNumber: 49,
                                 columnNumber: 28
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                            lineNumber: 27,
+                            lineNumber: 40,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         items.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1074,7 +1089,7 @@ const CartDrawer = ()=>{
                                             className: "flex-1"
                                         }, void 0, false, {
                                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                            lineNumber: 74,
+                                            lineNumber: 87,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$src$2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1082,47 +1097,6 @@ const CartDrawer = ()=>{
                                             size: "sm",
                                             children: "Apply"
                                         }, void 0, false, {
-                                            fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                            lineNumber: 75,
-                                            columnNumber: 19
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                    lineNumber: 73,
-                                    columnNumber: 17
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$src$2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                        placeholder: "Order note (optional)"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                        lineNumber: 82,
-                                        columnNumber: 19
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                }, void 0, false, {
-                                    fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                    lineNumber: 81,
-                                    columnNumber: 17
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex justify-between items-center py-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-muted-foreground",
-                                            children: "Subtotal"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                            lineNumber: 87,
-                                            columnNumber: 19
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-display text-xl font-bold",
-                                            children: [
-                                                "৳",
-                                                subtotal
-                                            ]
-                                        }, void 0, true, {
                                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
                                             lineNumber: 88,
                                             columnNumber: 19
@@ -1134,6 +1108,47 @@ const CartDrawer = ()=>{
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$src$2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                        placeholder: "Order note (optional)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                        lineNumber: 95,
+                                        columnNumber: 19
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                }, void 0, false, {
+                                    fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                    lineNumber: 94,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex justify-between items-center py-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-muted-foreground",
+                                            children: "Subtotal"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                            lineNumber: 100,
+                                            columnNumber: 19
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-display text-xl font-bold",
+                                            children: [
+                                                "৳",
+                                                subtotal
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                            lineNumber: 101,
+                                            columnNumber: 19
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
+                                    lineNumber: 99,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$src$2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1141,7 +1156,7 @@ const CartDrawer = ()=>{
                                             children: "Pay Online"
                                         }, void 0, false, {
                                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                            lineNumber: 93,
+                                            lineNumber: 106,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Programming$2f$Development$2f$artisan$2d$eats$2f$src$2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1150,19 +1165,19 @@ const CartDrawer = ()=>{
                                             children: "Cash on Delivery"
                                         }, void 0, false, {
                                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                            lineNumber: 96,
+                                            lineNumber: 109,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                                    lineNumber: 92,
+                                    lineNumber: 105,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Programming/Development/artisan-eats/src/components/cart/CartDrawer.jsx",
-                            lineNumber: 71,
+                            lineNumber: 84,
                             columnNumber: 35
                         }, ("TURBOPACK compile-time value", void 0))
                     ]

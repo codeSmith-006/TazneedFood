@@ -16,9 +16,22 @@ const CartDrawer = () => {
           {/* Drawer */}
           <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', damping: 25, stiffness: 300 }} className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-card z-50 flex flex-col shadow-xl">
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <h2 className="font-display text-xl font-semibold">Your Cart</h2>
-              <button onClick={closeCart} className="p-2 hover:bg-secondary rounded-lg transition-colors">
+            <div className="flex mt-24 items-center gap-2 p-4 border-b border-border sticky top-0 bg-card z-10 md:static">
+              <button
+                onClick={closeCart}
+                aria-label="Close cart"
+                className="md:hidden w-11 h-11 flex items-center justify-center rounded-lg hover:bg-secondary transition-colors"
+              >
+                <CloseOutlined />
+              </button>
+              <h2 className="font-display text-xl font-semibold flex-1 md:flex-none">
+                Your Cart
+              </h2>
+              <button
+                onClick={closeCart}
+                aria-label="Close cart"
+                className="hidden md:inline-flex w-10 h-10 items-center justify-center rounded-lg hover:bg-secondary transition-colors"
+              >
                 <CloseOutlined />
               </button>
             </div>

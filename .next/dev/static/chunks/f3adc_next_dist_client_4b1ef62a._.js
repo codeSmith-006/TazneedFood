@@ -3242,10 +3242,6 @@ function AppContainer({ children }) {
                                             }),
                                             ("TURBOPACK compile-time value", {
                                                 "protocol": ("TURBOPACK compile-time value", "https"),
-                                                "hostname": ("TURBOPACK compile-time value", "i.ibb.co")
-                                            }),
-                                            ("TURBOPACK compile-time value", {
-                                                "protocol": ("TURBOPACK compile-time value", "https"),
                                                 "hostname": ("TURBOPACK compile-time value", "images.unsplash.com")
                                             })
                                         ]),
