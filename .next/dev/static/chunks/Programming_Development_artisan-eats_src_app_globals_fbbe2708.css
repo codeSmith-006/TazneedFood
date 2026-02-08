@@ -394,7 +394,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
 }
 
 .info-bar {
@@ -645,6 +644,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: .5rem;
 }
 
+.mt-24 {
+  margin-top: 6rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -659,18 +662,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
 }
 
 .line-clamp-1 {
@@ -733,6 +724,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .h-12 {
   height: 3rem;
+}
+
+.h-14 {
+  height: 3.5rem;
 }
 
 .h-16 {
@@ -843,6 +838,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 3rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -905,6 +904,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .max-w-2xl {
   max-width: 42rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-lg {
@@ -1149,6 +1152,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: .25rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1213,6 +1220,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .border-destructive {
   border-color: hsl(var(--destructive));
+}
+
+.border-destructive\/30 {
+  border-color: hsl(var(--destructive) / .3);
 }
 
 .border-gray-200 {
@@ -1304,6 +1315,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: hsl(var(--destructive));
 }
 
+.bg-destructive\/10 {
+  background-color: hsl(var(--destructive) / .1);
+}
+
 .bg-foreground\/50 {
   background-color: hsl(var(--foreground) / .5);
 }
@@ -1377,6 +1392,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: hsl(var(--secondary) / .3);
 }
 
+.bg-secondary\/40 {
+  background-color: hsl(var(--secondary) / .4);
+}
+
 .bg-secondary\/50 {
   background-color: hsl(var(--secondary) / .5);
 }
@@ -1446,6 +1465,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .p-6 {
@@ -2551,6 +2574,10 @@ h1, h2, h3, h4, h5, h6 {
     top: auto;
   }
 
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   .sm\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -2643,6 +2670,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .sm\:p-5 {
     padding: 1.25rem;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-3 {
@@ -2845,6 +2880,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .lg\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-\[1\.1fr_0\.9fr\] {
+    grid-template-columns: 1.1fr .9fr;
   }
 
   .lg\:flex-row {

@@ -22,9 +22,11 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 
 const ProductsPage = () => {
-  const { products, categories, addProduct, updateProduct, deleteProduct, isLoading, refreshData } = useAdminStore();
+  const { products, categories, addProduct, updateProduct, deleteProduct, isLoading, refreshData } =
+    useAdminStore({ loadAnalytics: false });
   const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -150,7 +152,7 @@ const ProductsPage = () => {
       }
       setIsDialogOpen(false);
       resetForm();
-      await refreshData();
+      await refreshData(true);
     } catch (error) {
       toast({
         title: "Action failed",
@@ -167,7 +169,7 @@ const ProductsPage = () => {
       await deleteProduct(deleteProductId);
       toast({ title: "Product deleted successfully!" });
       setDeleteProductId(null);
-      await refreshData();
+      await refreshData(true);
     } catch (error) {
       toast({
         title: "Delete failed",
@@ -178,11 +180,7 @@ const ProductsPage = () => {
   };
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <LoadingScreen title="Loading products..." subtitle="Preparing your catalog" />;
   }
 
   return (

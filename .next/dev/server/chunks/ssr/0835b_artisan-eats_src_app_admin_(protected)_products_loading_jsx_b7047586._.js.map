@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/ryanrehan/Programming/Development/artisan-eats/src/app/admin/%28protected%29/products/loading.jsx"],"sourcesContent":["import LoadingScreen from \"@/components/ui/LoadingScreen\";\n\nexport default function Loading() {\n  return <LoadingScreen />;\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBAAO,+RAAC,qMAAa;;;;;AACvB"}}]
+}

@@ -1,0 +1,140 @@
+{
+  "node": {
+    "40f0334f71e0357d290b1d98dfdcc35013eebc03b8": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProduct",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/products.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "createProduct",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/products.js"
+    },
+    "60b8c073c6dd2f026d715c7728ae8837c1d3dac5f0": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateProduct",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/products.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "updateProduct",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/products.js"
+    },
+    "40f33963c6f42562b5ad26ba581190ab4156cf2eec": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteProduct",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/products.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "deleteProduct",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/products.js"
+    },
+    "40804d377932c5e04aed853f174c3a927bbf6eb50d": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createCategory",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/categories.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "createCategory",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/categories.js"
+    },
+    "6020d2f51bfe44fc1164367153201523579a42f348": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCategory",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/categories.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "updateCategory",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/categories.js"
+    },
+    "402b471a910c034fcdb26872e39ff3023797a2a329": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteCategory",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/categories.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "deleteCategory",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/categories.js"
+    },
+    "60b567005ab4fe5efef19697223d2a57d40b4dd211": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateOrderStatus",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/orders.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "updateOrderStatus",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/orders.js"
+    },
+    "4006dbba23328691a353b41a597f4ed9679d4a4c34": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteOrder",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/orders.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "deleteOrder",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/orders.js"
+    },
+    "007273b29446854df9b3e80577c28f76af2c32cf34": {
+      "workers": {
+        "app/admin/(protected)/orders/page": {
+          "moduleId": "[project]/Programming/Development/artisan-eats/.next-internal/server/app/admin/(protected)/orders/page/actions.js { ACTIONS_MODULE0 => \"[project]/Programming/Development/artisan-eats/src/app/actions/products.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Programming/Development/artisan-eats/src/app/actions/categories.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Programming/Development/artisan-eats/src/app/actions/orders.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getOrderAnalytics",
+          "filename": "Programming/Development/artisan-eats/src/app/actions/orders.js"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/orders/page": "action-browser"
+      },
+      "exportedName": "getOrderAnalytics",
+      "filename": "Programming/Development/artisan-eats/src/app/actions/orders.js"
+    }
+  },
+  "edge": {}
+}

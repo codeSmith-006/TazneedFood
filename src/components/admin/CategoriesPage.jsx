@@ -20,9 +20,11 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useToast } from "@/hooks/use-toast";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 
 const CategoriesPage = () => {
-  const { categories, products, addCategory, updateCategory, deleteCategory, isLoading, refreshData } = useAdminStore();
+  const { categories, products, addCategory, updateCategory, deleteCategory, isLoading, refreshData } =
+    useAdminStore({ loadAnalytics: false });
   const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -41,6 +43,12 @@ const CategoriesPage = () => {
   );
 
   const getProductCount = (categorySlug) => {
+    if (categorySlug === "best-seller") {
+      return products.filter((product) => product.isBestSeller).length;
+    }
+    if (categorySlug === "offer") {
+      return products.filter((product) => product.isOffer).length;
+    }
     return products.filter((product) => product.categorySlug === categorySlug).length;
   };
 
@@ -101,7 +109,7 @@ const CategoriesPage = () => {
       }
       setIsDialogOpen(false);
       resetForm();
-      await refreshData();
+      await refreshData(true);
     } catch (error) {
       toast({
         title: "Action failed",
@@ -118,7 +126,7 @@ const CategoriesPage = () => {
       await deleteCategory(deleteCategoryId);
       toast({ title: "Category deleted successfully!" });
       setDeleteCategoryId(null);
-      await refreshData();
+      await refreshData(true);
     } catch (error) {
       toast({
         title: "Delete failed",
@@ -129,11 +137,7 @@ const CategoriesPage = () => {
   };
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <LoadingScreen title="Loading categories..." subtitle="Syncing your catalog" />;
   }
 
   return (

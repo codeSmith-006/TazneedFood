@@ -1,13 +1,19 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from 'framer-motion';
 import { CloseOutlined, DeleteOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { useCartContext } from '@/contexts/CartContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 const CartDrawer = () => {
+    const router = useRouter();
     const { items, isOpen, closeCart, subtotal, updateQuantity, removeItem } = useCartContext();
+    const handleCodCheckout = () => {
+      closeCart();
+      router.push("/checkout");
+    };
     return (<AnimatePresence>
       {isOpen && (<>
           {/* Backdrop */}
@@ -106,7 +112,7 @@ const CartDrawer = () => {
                   <Button className="w-full btn-hero-gold">
                     Pay Online
                   </Button>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full" onClick={handleCodCheckout}>
                     Cash on Delivery
                   </Button>
                 </div>

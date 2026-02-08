@@ -38,6 +38,7 @@ export async function GET(req, { params }) {
       subtotal: order.subtotal,
       discount: order.discount || 0,
       coupon: order.coupon,
+      shipping: order.shipping || 0,
       total: order.total,
       paymentType: order.paymentType,
       status: order.status,

@@ -3,7 +3,17 @@ import { createProduct, updateProduct, deleteProduct } from "@/app/actions/produ
 import { createCategory, updateCategory, deleteCategory } from "@/app/actions/categories";
 import { updateOrderStatus, deleteOrder, getOrderAnalytics } from "@/app/actions/orders";
 
-export const useAdminStore = () => {
+const CACHE_TTL_MS = 60 * 1000;
+const adminCache = {
+  products: null,
+  categories: null,
+  orders: null,
+  analytics: null,
+  timestamp: 0,
+};
+
+export const useAdminStore = (options = {}) => {
+  const { loadAnalytics = true } = options;
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -18,8 +28,26 @@ export const useAdminStore = () => {
   });
   const [isLoading, setIsLoading] = useState(true);
 
-  const refreshData = useCallback(async () => {
+  const refreshData = useCallback(async (force = false) => {
     setIsLoading(true);
+
+    const cacheAge = Date.now() - adminCache.timestamp;
+    const cacheReady =
+      adminCache.timestamp > 0 &&
+      cacheAge < CACHE_TTL_MS &&
+      adminCache.products &&
+      adminCache.categories &&
+      adminCache.orders &&
+      (!loadAnalytics || adminCache.analytics);
+
+    if (!force && cacheReady) {
+      setProducts(adminCache.products);
+      setCategories(adminCache.categories);
+      setOrders(adminCache.orders);
+      setAnalytics(adminCache.analytics);
+      setIsLoading(false);
+      return;
+    }
 
     const [productsRes, categoriesRes, ordersRes] = await Promise.all([
       fetch("/api/products?limit=1000"),
@@ -27,27 +55,34 @@ export const useAdminStore = () => {
       fetch("/api/orders?page=1&limit=200"),
     ]);
 
-    if (productsRes.ok) {
-      const data = await productsRes.json();
-      setProducts(data.products || []);
+    const nextCache = {
+      products: productsRes.ok ? (await productsRes.json()).products || [] : adminCache.products || [],
+      categories: categoriesRes.ok ? (await categoriesRes.json()).categories || [] : adminCache.categories || [],
+      orders: ordersRes.ok ? (await ordersRes.json()).orders || [] : adminCache.orders || [],
+      analytics: adminCache.analytics || analytics,
+    };
+
+    setProducts(nextCache.products);
+    setCategories(nextCache.categories);
+    setOrders(nextCache.orders);
+
+    if (loadAnalytics) {
+      try {
+        const analyticsData = await getOrderAnalytics();
+        nextCache.analytics = analyticsData;
+        setAnalytics(analyticsData);
+      } catch {
+        setAnalytics((prev) => prev);
+      }
     }
 
-    if (categoriesRes.ok) {
-      const data = await categoriesRes.json();
-      setCategories(data.categories || []);
+    adminCache.products = nextCache.products;
+    adminCache.categories = nextCache.categories;
+    adminCache.orders = nextCache.orders;
+    if (loadAnalytics) {
+      adminCache.analytics = nextCache.analytics;
     }
-
-    if (ordersRes.ok) {
-      const data = await ordersRes.json();
-      setOrders(data.orders || []);
-    }
-
-    try {
-      const analyticsData = await getOrderAnalytics();
-      setAnalytics(analyticsData);
-    } catch {
-      setAnalytics((prev) => prev);
-    }
+    adminCache.timestamp = Date.now();
 
     setIsLoading(false);
   }, []);

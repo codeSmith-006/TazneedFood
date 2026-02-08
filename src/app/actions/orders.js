@@ -4,14 +4,9 @@ import { revalidatePath } from "next/cache";
 import { connectDB } from "@/lib/mongodb";
 import { requireAdmin } from "@/lib/permissions";
 import Order from "@/models/Order";
-import OrderCounter from "@/models/OrderCounter";
 import Product from "@/models/Product";
 import { getOrderAnalytics as getOrderAnalyticsUtil } from "@/lib/orderAnalytics";
-
-const ORDER_PREFIX = "ORD-";
-const ORDER_PAD = 6;
-
-const formatOrderNumber = (seq) => `${ORDER_PREFIX}${String(seq).padStart(ORDER_PAD, "0")}`;
+import { generateUniqueOrderNumber } from "@/lib/orderNumber";
 
 export async function createOrder(orderData) {
   await connectDB();
@@ -57,13 +52,7 @@ export async function createOrder(orderData) {
   const discount = 0;
   const total = Math.max(0, subtotal - discount);
 
-  const counter = await OrderCounter.findOneAndUpdate(
-    { _id: "orderNumber" },
-    { $inc: { seq: 1 } },
-    { new: true, upsert: true },
-  );
-
-  const orderNumber = formatOrderNumber(counter.seq);
+  const orderNumber = await generateUniqueOrderNumber();
 
   const order = await Order.create({
     orderNumber,

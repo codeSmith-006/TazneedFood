@@ -17,9 +17,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 
 const OrdersPage = () => {
-  const { orders, updateOrderStatus, isLoading, refreshData } = useAdminStore();
+  const { orders, updateOrderStatus, isLoading, refreshData } = useAdminStore({ loadAnalytics: false });
   const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -67,7 +68,7 @@ const OrdersPage = () => {
       if (selectedOrder?.id === orderId) {
         setSelectedOrder({ ...selectedOrder, status });
       }
-      await refreshData();
+      await refreshData(true);
     } catch (error) {
       toast({
         title: "Failed to update order",
@@ -78,11 +79,7 @@ const OrdersPage = () => {
   };
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <LoadingScreen title="Loading orders..." subtitle="Fetching recent activity" />;
   }
 
   return (
@@ -222,6 +219,16 @@ const OrdersPage = () => {
                   <p className="flex items-center gap-2">
                     <EnvironmentOutlined /> {selectedOrder.customer.address}
                   </p>
+                  {selectedOrder.customer.city ? (
+                    <p className="flex items-center gap-2">
+                      <EnvironmentOutlined /> {selectedOrder.customer.city}
+                    </p>
+                  ) : null}
+                  {selectedOrder.customer.note ? (
+                    <p className="text-xs text-muted-foreground">
+                      Note: {selectedOrder.customer.note}
+                    </p>
+                  ) : null}
                 </div>
               </div>
 

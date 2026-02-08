@@ -5,16 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ShoppingOutlined, OrderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { useAdminStore } from "@/hooks/useAdminStore";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 
 const DashboardPage = () => {
   const { orders, getStats, isLoading } = useAdminStore();
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <LoadingScreen title="Loading dashboard..." subtitle="Fetching latest admin data" />;
   }
 
   const stats = getStats();

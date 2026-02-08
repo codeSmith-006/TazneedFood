@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///home/ryanrehan/Programming/Development/artisan-eats/src/app/admin/%28protected%29/page.jsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\nexport default function Page() {\n  redirect(\"/admin/dashboard\");\n}\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAEe,SAAS;IACtB,IAAA,kPAAQ,EAAC;AACX"}}]
+}
